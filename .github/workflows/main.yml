@@ -1,4 +1,4 @@
-name: main
+name: Run Tests on Push
 
 on:
   push:
@@ -10,11 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: check
       - uses: actions/checkout@v4
-      
       - name: Instalar dependencia
         run: pip install pytest
-        
       - name: Ejecutar pruebas
         run: pytest test.py
