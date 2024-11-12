@@ -1,18 +1,20 @@
-name: ej1 workflow
+name: main1
 
-on: push
+on:
+  push:
+    branches:
+      - main
 
 jobs:
- 
- python_test:
- 
+  test:
     runs-on: ubuntu-latest
-    
+
     steps:
+      - name: check
       - uses: actions/checkout@v4
       
-      - name: Instalar pytest
+      - name: Instalar dependencia
         run: pip install pytest
         
-      - name: +pruebas
+      - name: Ejecutar pruebas
         run: pytest test.py
