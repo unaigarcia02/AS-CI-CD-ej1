@@ -1,0 +1,18 @@
+name: ej1 workflow
+
+on: push
+
+jobs:
+ 
+ python_test:
+ 
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Instalar pytest
+        run: pip install pytest
+        
+      - name: +pruebas
+        run: pytest test.py
